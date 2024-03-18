@@ -1,0 +1,49 @@
+﻿@using Billboard.Models
+@{
+	ViewData["Title"] = "HiQ";
+    
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+	<title>Welcome to HiQ</title>
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+</head>
+
+<body class="hiqBody">
+<div class ="hiqContainer">
+	<div class = "welcomeDiv">
+	<h1> Welcome to</h1>
+	</div>
+	<div class = "logoDiv">
+	<img class ="hiqImage"src="https://i.postimg.cc/Y0kjs9NR/hi-Q-picture.jpg" width="250" height="150">
+	</div>
+	<div class = "mottoDiv">
+	<h3 class = "mottoMessage">Our dealings are <font color="#F51BE0"> complex</font>, our duty <font color="#F51BE0"> simplicity </font></h3>
+	</div>
+</div>
+ <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+
+	  $(".welcomeDiv").animate({"opacity": "1"}, 1000, function(){
+        $(".logoDiv").animate({"opacity": "1"}, 1000, function(){
+            $(".mottoDiv").animate({"opacity": "1"}, 1000);
+            });
+         });
+
+       setTimeout(changeView, 10000); //Switches back to Corona
+
+       function changeView(){
+       window.location.assign("/Home/Corona");
+
+	   
+   }
+</script>
+</body>
+</html>
+
+

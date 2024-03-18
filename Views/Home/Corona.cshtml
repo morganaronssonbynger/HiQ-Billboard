@@ -1,0 +1,424 @@
+﻿@using Billboard.Models
+@using System.Collections
+@using System.Globalization
+@{
+    ViewData["Title"] = "Corona";
+}
+
+@{
+    WeekOutputHandler wOH = new WeekOutputHandler();
+
+    string[] weather = wOH.GetWeather();
+    DateTime todaysDate = DateTime.Today.Date;
+    string[,][] eventArray = wOH.GetThisWeeksActivities();
+
+    CultureInfo myCI = new CultureInfo("sv-SE");
+    Calendar myCal = myCI.Calendar;
+
+    // Gets the DTFI properties required by GetWeekOfYear.
+    CalendarWeekRule myCWR = myCI.DateTimeFormat.CalendarWeekRule;
+    DayOfWeek myFirstDOW = myCI.DateTimeFormat.FirstDayOfWeek;
+
+    string month = wOH.GetMonth();
+
+
+}
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<body class="bodyBackground" onload="setTime()">
+
+    <div class="main">
+       
+        <div class="header">
+            <img class="logo" src="https://i.postimg.cc/2SwFHMcr/svart-hiq.png">
+           <div class="clock" id="clock"></div>
+        </div>
+        <aside class="weekPlanner">
+            <div class="weekTitle">
+               V.@myCal.GetWeekOfYear( DateTime.Now, myCWR, myFirstDOW) @month
+            </div>
+            <div class="monday">
+               Mån
+             
+               <table class="mondayTable">
+                
+                    @{
+                        // We specify that we want 5 events per column and check how many columns we need
+
+                        double nbrEmpsMon = (double)(eventArray[0, 0].Length + eventArray[0, 1].Length + eventArray[0, 2].Length + eventArray[0, 3].Length + eventArray[0, 4].Length);
+                        double columnsMon = nbrEmpsMon / 5;
+                        double numberColumnsMon = Math.Ceiling(columnsMon);
+
+                        //For loop that populates mondays acitivities in a table
+
+                        for (int eventType = 0; eventType < 5; eventType++)
+                        {
+
+
+                            for (int employee = 0; employee < eventArray[0, eventType].Length;)
+                            {
+
+                                
+                                         <tr>
+                                         @for (int x = 0; x < numberColumnsMon; x++)
+                                         {
+                                             if(eventArray[0,eventType].Length > employee)
+                                             {
+                                                
+                                                    
+                                                    <td>
+                                                    @if(eventType == 0)
+                                                    {
+                                                    <img class = "assignmentStartLogo" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+                                                    }
+                                                    else if(eventType == 1){
+                                                    <img class = "assignmentEndLogo" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+                                                    }
+                                                    else if (eventType == 2){
+                                                    <img class = "vacationStartLogo" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+                                                    }
+                                                    else if (eventType == 3){
+                                                    <img class = "vacationEndLogo" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+                                                    }
+                                                    else if (eventType == 4){
+                                                    <img class = "birthdayLogo" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+                                                    }
+                                                    @eventArray[0,eventType][employee]
+                                                    
+                                                    </td>
+                                                    }
+                                                   
+                                            employee++;
+                                          }
+                                         </tr>
+                                     }
+
+                            }
+                        }
+                    
+                </table>
+            </div>
+            
+            <div class="tuesday">
+                Tis
+                <table class="tuesdayTable">
+                
+                    @{
+                        // We specify that we want 5 events per column and check how many columns we need
+
+                        double nbrEmpsTue = (double)(eventArray[1, 0].Length + eventArray[1, 1].Length + eventArray[1, 2].Length + eventArray[1, 3].Length + eventArray[1, 4].Length);
+                        double columnsTue = nbrEmpsTue / 5;
+                        double numberColumnsTue = Math.Ceiling(columnsTue);
+
+                        //For loop that populates tuesdays acitivities in a table
+
+                        for (int eventType = 0; eventType < 5; eventType++)
+                        {
+
+
+                            for (int employee = 0; employee < eventArray[1, eventType].Length;)
+                            {
+
+                               
+                                         <tr>
+                                         @for (int x = 0; x < numberColumnsTue; x++)
+                                         {
+                                             if(eventArray[1,eventType].Length > employee)
+                                             {
+                                       
+                                                    <td>
+                                                    @if(eventType == 0)
+                                                    {
+                                                    <img class = "assignmentStartLogo" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+                                                    }
+                                                    else if(eventType == 1){
+                                                    <img class = "assignmentEndLogo" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+                                                    }
+                                                    else if (eventType == 2){
+                                                    <img class = "vacationStartLogo" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+                                                    }
+                                                    else if (eventType == 3){
+                                                   <img class = "vacationEndLogo" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+                                                    }
+                                                    else if (eventType == 4){
+                                                    <img class = "birthdayLogo" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+                                                    }
+                                                    @eventArray[1,eventType][employee]
+                                                    
+                                                    </td>
+                                                    
+                                             }
+
+                                            employee++;
+                                          }
+                                         </tr>
+                                     }
+
+                                   }
+                                }
+                 </table>          
+            </div>
+           
+            <div class="wednesday">
+                Ons
+               <table class="wednesdayTable">
+                
+                    @{
+                        // We specify that we want 5 events per column and check how many columns we need
+
+                        double nbrEmpsWed = (double)(eventArray[2, 0].Length + eventArray[2, 1].Length + eventArray[2, 2].Length + eventArray[2, 3].Length + eventArray[2, 4].Length);
+                        double columnsWed = nbrEmpsWed / 5;
+                        double numberColumnsWed = Math.Ceiling(columnsWed);
+
+                        //For loop that populates wednesdays acitivities in a table
+
+                        for (int eventType = 0; eventType < 5; eventType++)
+                        {
+
+
+                            for (int employee = 0; employee < eventArray[2, eventType].Length;)
+                            {
+
+                              
+                                         <tr>
+                                         @for (int x = 0; x < numberColumnsWed; x++)
+                                         {
+                                             if(eventArray[2,eventType].Length > employee)
+                                             {
+
+                                              <td>
+                                                    @if(eventType == 0)
+                                                    {
+                                                    <img class = "assignmentStartLogo" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+                                                    }
+                                                    else if(eventType == 1){
+                                                    <img class = "assignmentEndLogo" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+                                                    }
+                                                    else if (eventType == 2){
+                                                    <img class = "vacationStartLogo" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+                                                    }
+                                                    else if (eventType == 3){
+                                                    <img class = "vacationEndLogo" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+                                                    }
+                                                    else if (eventType == 4){
+                                                    <img class = "birthdayLogo" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+                                                    }
+                                                    @eventArray[2,eventType][employee]
+                                                    
+                                                    </td>
+                                                    }
+
+                                        employee++;
+                                        
+                                    }
+                                         </tr>
+                                     }
+
+
+                                   }
+                                }
+                </table>           
+            </div>
+            
+            <div class="thursday">
+                Tors
+               <table class="thursdayTable">
+                
+                    @{
+                        // We specify that we want 5 events per column and check how many columns we need
+
+                        double nbrEmpsThu = (double)(eventArray[3, 0].Length + eventArray[3, 1].Length + eventArray[3, 2].Length + eventArray[3, 3].Length + eventArray[3, 4].Length);
+                        double columnsThu = nbrEmpsThu / 5;
+                        double numberColumnsThu = Math.Ceiling(columnsThu);
+
+                        //For loop that populates thursdays acitivities in a table
+
+                        for (int eventType = 0; eventType < 5; eventType++)
+                        {
+
+
+                            for (int employee = 0; employee < eventArray[3, eventType].Length;)
+                            {
+
+                                         <tr>
+                                         @for (int x = 0; x < numberColumnsThu; x++)
+                                         {
+                                             if(eventArray[3,eventType].Length > employee)
+                                             {
+                                                    <td>
+                                                    @if(eventType == 0)
+                                                    {
+                                                    <img class = "assignmentStartLogo" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+                                                    }
+                                                    else if(eventType == 1){
+                                                    <img class = "assignmentEndLogo" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+                                                    }
+                                                    else if (eventType == 2){
+                                                    <img class = "vacationStartLogo" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+                                                    }
+                                                    else if (eventType == 3){
+                                                    <img class = "vacationEndLogo" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+                                                    }
+                                                    else if (eventType == 4){
+                                                    <img class = "birthdayLogo" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+                                                    }
+                                                    @eventArray[3,eventType][employee]
+                                                    
+                                                    </td>
+                                                    }
+                             
+                                           
+                                            employee++;
+                                          }
+                                         </tr>
+                                     }
+
+                                   }
+                                }
+              </table>
+            </div>
+            
+            <div class="friday">
+
+                Fre
+                <table class = "fridayTable">
+                    @{
+                        // We specify that we want 5 events per column and check how many columns we need
+
+                        double nbrEmpsFri = (double)(eventArray[4, 0].Length + eventArray[4, 1].Length + eventArray[4, 2].Length + eventArray[4, 3].Length + eventArray[4, 4].Length);
+                        double columnsFri = nbrEmpsFri / 5;
+                        double numberColumnsFri = Math.Ceiling(columnsFri);
+                        
+                        //For loop that populates fridays acitivities in a table
+
+                        for (int eventType = 0; eventType < 5; eventType++)
+                        {
+                            for (int employee = 0; employee < eventArray[4, eventType].Length;)
+                            {
+                                         <tr>
+                                         @for (int x = 0; x < numberColumnsFri; x++)
+                                         {
+                                            
+                                             if(employee < eventArray[4, eventType].Length)
+                                             {
+   
+                                            <td>
+                                                    @if(eventType == 0)
+                                                    {
+                                                    <img class = "assignmentStartLogo" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+                                                    }
+                                                    else if(eventType == 1){
+                                                    <img class = "assignmentEndLogo" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+                                                    }
+                                                    else if (eventType == 2){
+                                                    <img class = "vacationStartLogo" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+                                                    }
+                                                    else if (eventType == 3){
+                                                    <img class = "vacationEndLogo" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+                                                    }
+                                                    else if (eventType == 4){
+                                                    <img class = "birthdayLogo" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+                                                    }
+                                                    @eventArray[4,eventType][employee]
+                                                    
+                                                    </td>
+                                                   } 
+
+                                        
+                                        employee++;
+                                    }
+                                         </tr>
+                                     }
+
+                                   }
+                                }
+                            
+                
+                 </table>
+                           
+
+                        
+                
+            </div>                                             
+            <img class = "assignmentStartBottom" src = "https://i.postimg.cc/66GNT2xY/nyblue.png">
+            <div class="assignmentStartText">
+                Uppdrag start
+            </div>
+            <img class = "assignmentEndBottom" src = "https://i.postimg.cc/9QgxGbGT/orangeny.png">
+            <div class="assignmentEndText">
+                Uppdrag slut
+            </div>
+            <img class = "vacationStartBottom" src = "https://i.postimg.cc/nzFtC0Zm/cyanide.png">
+            <div class="vacationStartText">
+                Semester start
+            </div>
+            <img class = "birthdayBottom" src = "https://i.postimg.cc/28c3mLQT/pinkny.png">
+            <div class="birthdayText">
+                Födelsedag
+            </div>
+            <img class = "vacationEndBottom" src = "https://i.postimg.cc/JnLjJHdZ/redny.png">
+            <div class="vacationEndText">
+                Semester slut
+            </div>
+        </aside>
+        <aside class="coronaBox">
+            <div class="coronaTitle">
+                För allas säkerhet...
+            </div>
+            <div class="coronaMessage1">
+                Glöm inte att registrera din närvaro i receptionen
+            </div>
+            <div class="coronaMessage2">
+                Glöm inte att tvätta händerna och håll avstånd till varandra
+            </div>
+        </aside>
+        <aside class="weatherAside">
+             <div class="divWeather">
+                 <div class = "weatherTitle"> Väderprognos </div>
+                <div class="weatherLogo">
+                    Idag: @weather[1]  
+                    <img src="@weather[2]" />
+                </div>
+                <div class="weatherLogo">
+                    Imorgon: @weather[4]
+                     <img src="@weather[5]" />
+                </div>
+            </div>
+            </aside>
+
+        <!--Testing weather import under-->
+
+
+    </div>
+    <script>
+        setTimeout(changeView, 60000); //switches side to Birthday.cshtml
+
+    function changeView(){
+        window.location.assign("/Home/Birthday");
+    }
+
+    function setTime(){
+    now = new Date();
+    hours = now.getHours();
+    if(hours<10) hours="0"+hours;
+    minutes = now.getMinutes();
+    if(minutes<10) minutes="0"+minutes;
+    timeString = hours+":"+minutes;
+    document.getElementById('clock').innerHTML = timeString;
+    setTimeout("setTime()", 1000);
+    }
+
+    //Makes the elemnts fade in
+
+    $(".weekPlanner").animate({"opacity": "1"}, 2000, function(){
+        $(".weatherAside").animate({"opacity": "1"}, 2000, function(){
+            $(".coronaBox").animate({"opacity": "1"}, 2000);
+            });
+         });
+    
+    
+
+    </script>
+</body>
+
+
+

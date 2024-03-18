@@ -1,0 +1,444 @@
+﻿.weatherTitle {
+    font-family: Tahoma;
+    font-size: 40px;
+    margin-top: -60px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.clock {
+    font-family: Tahoma;
+    font-size: 60px;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+.bodyBackground {
+    background-image: url('https://i.postimg.cc/NFjwHWzF/hiq.png');
+    background-size: 1920px 1200px;
+    background-repeat: no-repeat;
+    padding-bottom: 1180px;
+}
+
+.hiqInstagramLogo {
+    margin-top: 63px;
+    left: 70px;
+    position: absolute;
+    width: 150px;
+    height: 150px
+}
+
+.instagramMessage {
+    left: 230px;
+    position: absolute;
+    top: 120px;
+    font-size: 20px;
+    font-family: Tahoma;
+    text-align: center;
+    width: 300px;
+}
+
+.assignmentStartLogo {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    vertical-align: middle;
+}
+
+.assignmentEndLogo {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    vertical-align: middle;
+}
+
+.vacationStartLogo {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    vertical-align: middle;
+}
+
+.vacationEndLogo {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    vertical-align: middle;
+}
+
+.birthdayLogo {
+    height: 20px;
+    width: 20px;
+    top: 5px;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 22px 0;
+    margin-left: -25px;
+    font-family: Tahoma;
+    font-size: 17px;
+}
+
+
+.header {
+    background-color: #c4c4c4bf;
+    height: 13%;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+}
+
+.weekPlanner {
+    background-color: #c4c4c4bf;
+    border-radius: 40px;
+    height: 120%;
+    left: 0;
+    position: absolute;
+    top: 20%;
+    display: block;
+    margin-left: 10%;
+    justify-content: center;
+    width: 36%;
+    opacity: 0;
+}
+
+.weatherAside {
+    background-color: #c4c4c4bf;
+    border-radius: 40px;
+    height: 35%;
+    left: 47%;
+    position: absolute;
+    top: 34%;
+    display: inline;
+    margin-left: 10%;
+    justify-content: center;
+    width: 30%;
+    opacity: 0;
+}
+
+.logo {
+    height: 100px;
+    margin-left: 849px;
+    object-fit: cover;
+    position: absolute;
+    width: 250px;
+}
+
+.weekTitle {
+    letter-spacing: 0;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 45px;
+    margin-top: 30px;
+}
+
+.monday {
+    boarder-radius: 50px;
+    left: 40px;
+    position: absolute;
+    top: 110px;
+    width: 600px;
+    font-size: 25px;
+    font-family: Tahoma;
+    height: 180px;
+}
+
+
+
+.tuesday {
+    boarder-radius: 50px;
+    left: 40px;
+    position: absolute;
+    top: 265px;
+    width: 600px;
+    font-size: 25px;
+    font-family: Tahoma;
+    height: 180px;
+}
+
+
+
+.wednesday {
+    boarder-radius: 50px;
+    left: 40px;
+    position: absolute;
+    top: 415px;
+    width: 600px;
+    font-size: 25px;
+    font-family: Tahoma;
+    height: 180px;
+}
+
+
+
+.thursday {
+    boarder-radius: 50px;
+    left: 40px;
+    position: absolute;
+    top: 570px;
+    width: 600px;
+    font-size: 25px;
+    font-family: Tahoma;
+    height: 180px;
+}
+
+
+
+.friday {
+    boarder-radius: 50px;
+    left: 40px;
+    position: absolute;
+    top: 710px;
+    width: 600px;
+    font-size: 25px;
+    font-family: Tahoma;
+    height: 180px;
+}
+
+
+.assignmentStartBottom {
+    height: 20px;
+    left: 140px;
+    position: absolute;
+    top: 890px;
+    width: 20px;
+}
+
+.assignmentStartText {
+    left: 165px;
+    position: absolute;
+    top: 890px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+
+.assignmentEndBottom {
+    height: 20px;
+    left: 285px;
+    position: absolute;
+    top: 890px;
+    width: 20px;
+}
+
+.assignmentEndText {
+    left: 310px;
+    position: absolute;
+    top: 890px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.vacationStartBottom {
+    height: 20px;
+    left: 420px;
+    position: absolute;
+    top: 890px;
+    width: 20px;
+}
+
+.vacationStartText {
+    left: 445px;
+    position: absolute;
+    top: 890px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.vacationEndBottom {
+    height: w0px;
+    left: 215px;
+    position: absolute;
+    top: 925px;
+    width: 20px;
+}
+
+.vacationEndText {
+    left: 240px;
+    position: absolute;
+    top: 925px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.birthdayBottom {
+    height: 20px;
+    left: 355px;
+    position: absolute;
+    top: 925px;
+    width: 20px;
+}
+
+.birthdayText {
+    left: 380px;
+    position: absolute;
+    top: 925px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+
+.weatherLogo {
+    padding: 0px;
+    vertical-align: top;
+    display: block;
+    margin-left: 30px;
+    margin-right: 3px;
+    width: 150px;
+    height: 150px;
+    float: left;
+    font-family: Tahoma;
+    font-size: 18px;
+}
+
+.divWeather {
+    text-align: center;
+    border-radius: 40px;
+    left: 14%;
+    position: absolute;
+    display: block;
+    top: 30%;
+}
+
+.birthdayBox {
+    background-color: #c4c4c4bf;
+    border-radius: 40px;
+    height: 35%;
+    left: 47%;
+    position: absolute;
+    top: 86%;
+    display: inline;
+    margin-left: 10%;
+    justify-content: center;
+    width: 30%;
+    opacity: 0;
+}
+
+.birthdayMessage {
+    letter-spacing: 0;
+    position: absolute;
+    text-align: center;
+    top: 60px;
+    font-family: Tahoma;
+    font-size: 45px;
+    width: 350px;
+    height: 200px;
+    padding-left: 110px;
+}
+
+.birthdayMessageMany {
+    letter-spacing: 0;
+    position: absolute;
+    text-align: center;
+    top: 80px;
+    left: 160px;
+    font-family: Tahoma;
+    font-size: 32px;
+    height: 200px;
+}
+
+p {
+    margin-bottom: -20px;
+}
+
+
+.birthdayTitle {
+    letter-spacing: 0;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: 140px;
+    font-family: Tahoma;
+    font-size: 50px;
+    width: 300px;
+    height: 200px;
+}
+
+.coronaBox {
+    background-color: #c4c4c4bf;
+    border-radius: 40px;
+    height: 35%;
+    left: 47%;
+    position: absolute;
+    top: 86%;
+    display: inline;
+    margin-left: 10%;
+    justify-content: center;
+    width: 30%;
+    opacity: 0;
+}
+
+
+.coronaTitle {
+    font-family: Tahoma;
+    font-size: 40px;
+    padding-bottom: 5%;
+    margin-left: 23%;
+    padding-top: 5%;
+}
+
+.coronaMessage1 {
+    padding-bottom: 2%;
+    font-family: Tahoma;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.coronaMessage2 {
+    padding-bottom: 3%;
+    font-family: Tahoma;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.hiqBody {
+    font-family: 'Share Tech', sans-serif;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.hiqContainer {
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 180px;
+    font-size: 50px;
+    background-color: black;
+    color: white;
+}
+
+.hiqImage {
+    display: block;
+    margin-left: 44.2%
+}
+
+h3 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+}
+
+.welcomeDiv {
+    opacity: 0;
+}
+
+.mottoDiv {
+    opacity: 0;
+}
+
+.logoDiv {
+    opacity: 0;
+}
